@@ -2,6 +2,8 @@ package com.spring.controller.common;
 
 import java.io.IOException;
 
+import org.springframework.stereotype.Controller;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,6 +17,13 @@ public class DispatcherServlet extends HttpServlet {
 	private HandlerMapping handler;
 	private ViewResolver viewResolver;
 
+	// init-method="init"
+	// 1. 멤버변수 초기화하는 역할
+	// 2. 생성자
+	// 3. setter
+	// 4. @Autowired
+	// 5. DI(의존주입)
+	// 6. init() 메서드
 	public void init() {
 		handler=new HandlerMapping();
 		viewResolver=new ViewResolver();
@@ -38,12 +47,14 @@ public class DispatcherServlet extends HttpServlet {
 		System.out.println("FC : "+commend);
 
 		Controller controller=handler.getController(commend);
-		String view = controller.execute(request, response);
+		/*
+		ModelAndView mav = controller.handleRequest(request, response);
 
-		if(view.contains(".do")) {
-			view=viewResolver.getView(view);
+		if(!mav.getViewName().contains(".do")) {
+			mav.setViewName(viewResolver.getView(mav.getViewName()));
 		}
-		response.sendRedirect(view);
+		response.sendRedirect(mav.getViewName());
+		*/
 
 	}
 }

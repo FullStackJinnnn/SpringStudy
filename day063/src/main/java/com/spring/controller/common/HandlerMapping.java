@@ -3,7 +3,7 @@ package com.spring.controller.common;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.spring.controller.member.LoginController;
+import org.springframework.stereotype.Controller;
 
 public class HandlerMapping {
 	private Map<String,Controller> mappings;
@@ -11,7 +11,8 @@ public class HandlerMapping {
 	public HandlerMapping() {
 		mappings=new HashMap<String,Controller>();
 		
-		mappings.put("/main.do", new LoginController());
+		//mappings.put("/login.do", new LoginController());
+		//mappings.put("/main.do", new MainController());
 	}
 	
 	public Controller getController(String commend) {

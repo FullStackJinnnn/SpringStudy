@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 // Action
-public interface Controller {
+public interface XXXControllerXXX {
 
 	// ActionForward → String
 	String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
