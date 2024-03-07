@@ -47,6 +47,7 @@ public class DispatcherServlet extends HttpServlet {
 		System.out.println("FC : "+commend);
 
 		Controller controller=handler.getController(commend);
+		
 		/*
 		ModelAndView mav = controller.handleRequest(request, response);
 
